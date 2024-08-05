@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desert Racer: Code Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="intro-screen">
+        <div id="intro-content">
+            <h1>Welcome to Desert Racer!</h1>
+            <h3>created by:NITIN YADAV</h3>
+            <p>Instructions:</p>
+            <ul>
+                <li>Use arrow keys to control the car.</li>
+                <li>Collect coins to advance to the next level.</li>
+                <li>Avoid obstacles like plants and camels.</li>
+                <li>Do not hit the walls, or the game will end!</li>
+            </ul>
+            <p>By playing this game, you agree to our <a href="#">Terms and Conditions</a>.</p>
+            <input type="checkbox" id="accept-terms">
+            <label for="accept-terms">I accept the Terms and Conditions</label>
+            <button id="start-game">Start Game</button>
+        </div>
+    </div>
+    <div id="header">
+        <h1>Desert Racer: Code Edition</h1>
+        <div id="info">Level: 1 | Coins Collected: 0 | Coins Needed: 5</div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="retry-container">
+        <button id="retryBtn">Retry</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
