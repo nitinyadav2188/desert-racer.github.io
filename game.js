@@ -180,7 +180,33 @@ function startGame() {
         alert('You must accept the terms and conditions to start the game.');
     }
 }
+//touch screen k liye
 
+function handleTouchStart(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const halfWidth = canvas.width / 2;
+    const halfHeight = canvas.height / 2;
+
+    if (touch.clientX < halfWidth && touch.clientY < halfHeight) {
+        keys['ArrowUp'] = true;
+    } else if (touch.clientX < halfWidth && touch.clientY > halfHeight) {
+        keys['ArrowLeft'] = true;
+    } else if (touch.clientX > halfWidth && touch.clientY < halfHeight) {
+        keys['ArrowRight'] = true;
+    } else if (touch.clientX > halfWidth && touch.clientY > halfHeight) {
+        keys['ArrowDown'] = true;
+    }
+}
+
+function handleTouchEnd(event) {
+    event.preventDefault();
+    keys['ArrowUp'] = false;
+    keys['ArrowLeft'] = false;
+    keys['ArrowRight'] = false;
+    keys['ArrowDown'] = false;
+}
+//--------------------------------------->
 window.addEventListener('keydown', (e) => {
     keys[e.key] = true;
 });
