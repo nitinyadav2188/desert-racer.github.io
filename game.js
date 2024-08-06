@@ -185,16 +185,45 @@ function startGame() {
 function handleTouchStart(event) {
     event.preventDefault();
     const touch = event.touches[0];
-    const thirdWidth = canvas.width / 3;
-    const thirdHeight = canvas.height / 3;
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
 
-    if (touch.clientX < thirdWidth) {
+    // Clear previous keys
+    keys['ArrowLeft'] = false;
+    keys['ArrowRight'] = false;
+    keys['ArrowUp'] = false;
+    keys['ArrowDown'] = false;
+
+    if (touchX < canvas.width / 3) {
         keys['ArrowLeft'] = true;
-    } else if (touch.clientX > 2 * thirdWidth) {
+    } else if (touchX > 2 * canvas.width / 3) {
         keys['ArrowRight'] = true;
-    } else if (touch.clientY < thirdHeight) {
+    } else if (touchY < canvas.height / 3) {
         keys['ArrowUp'] = true;
-    } else if (touch.clientY > 2 * thirdHeight) {
+    } else if (touchY > 2 * canvas.height / 3) {
+        keys['ArrowDown'] = true;
+    }
+}
+
+function handleTouchMove(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
+
+    // Clear previous keys
+    keys['ArrowLeft'] = false;
+    keys['ArrowRight'] = false;
+    keys['ArrowUp'] = false;
+    keys['ArrowDown'] = false;
+
+    if (touchX < canvas.width / 3) {
+        keys['ArrowLeft'] = true;
+    } else if (touchX > 2 * canvas.width / 3) {
+        keys['ArrowRight'] = true;
+    } else if (touchY < canvas.height / 3) {
+        keys['ArrowUp'] = true;
+    } else if (touchY > 2 * canvas.height / 3) {
         keys['ArrowDown'] = true;
     }
 }
@@ -205,8 +234,7 @@ function handleTouchEnd(event) {
     keys['ArrowLeft'] = false;
     keys['ArrowRight'] = false;
     keys['ArrowDown'] = false;
-}
-
+}   
 //--------------------------------------->
 window.addEventListener('keydown', (e) => {
     keys[e.key] = true;
@@ -216,6 +244,7 @@ window.addEventListener('keyup', (e) => {
 });
 
 canvas.addEventListener('touchstart', handleTouchStart);
+canvas.addEventListener('touchmove', handleTouchMove);
 canvas.addEventListener('touchend', handleTouchEnd);
 
 retryBtn.addEventListener('click', resetGame);
