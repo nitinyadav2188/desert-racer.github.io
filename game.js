@@ -185,16 +185,16 @@ function startGame() {
 function handleTouchStart(event) {
     event.preventDefault();
     const touch = event.touches[0];
-    const halfWidth = canvas.width / 2;
-    const halfHeight = canvas.height / 2;
+    const thirdWidth = canvas.width / 3;
+    const thirdHeight = canvas.height / 3;
 
-    if (touch.clientX < halfWidth && touch.clientY < halfHeight) {
-        keys['ArrowUp'] = true;
-    } else if (touch.clientX < halfWidth && touch.clientY > halfHeight) {
+    if (touch.clientX < thirdWidth) {
         keys['ArrowLeft'] = true;
-    } else if (touch.clientX > halfWidth && touch.clientY < halfHeight) {
+    } else if (touch.clientX > 2 * thirdWidth) {
         keys['ArrowRight'] = true;
-    } else if (touch.clientX > halfWidth && touch.clientY > halfHeight) {
+    } else if (touch.clientY < thirdHeight) {
+        keys['ArrowUp'] = true;
+    } else if (touch.clientY > 2 * thirdHeight) {
         keys['ArrowDown'] = true;
     }
 }
@@ -206,6 +206,7 @@ function handleTouchEnd(event) {
     keys['ArrowRight'] = false;
     keys['ArrowDown'] = false;
 }
+
 //--------------------------------------->
 window.addEventListener('keydown', (e) => {
     keys[e.key] = true;
@@ -213,6 +214,9 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('keyup', (e) => {
     keys[e.key] = false;
 });
+
+canvas.addEventListener('touchstart', handleTouchStart);
+canvas.addEventListener('touchend', handleTouchEnd);
 
 retryBtn.addEventListener('click', resetGame);
 startGameBtn.addEventListener('click', startGame);
