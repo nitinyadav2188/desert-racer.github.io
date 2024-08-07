@@ -53,14 +53,34 @@ function initializeLevel() {
     gameOver = false;
     message = '';
 
-    for (let i = 0; i < coinsNeeded; i++) {
-        coins.push({ x: Math.random() * (canvas.width - 20), y: Math.random() * (canvas.height - 20) });
+    // Generate coins ensuring they are not overlapping
+    while (coins.length < coinsNeeded) {
+        let coinX = Math.random() * (canvas.width - 20);
+        let coinY = Math.random() * (canvas.height - 20);
+        let overlap = false;
+
+        // Check for overlap with existing coins
+        for (let coin of coins) {
+            if (Math.abs(coinX - coin.x) < 20 && Math.abs(coinY - coin.y) < 20) {
+                overlap = true;
+                break;
+            }
+        }
+
+        if (!overlap) {
+            coins.push({ x: coinX, y: coinY });
+        }
     }
+
+    // Generate plants and camels
     for (let i = 0; i < level * 3; i++) {
-        plants.push({ x: Math.random() * (canvas.width - 30), y: Math.random() * (canvas.height - 30) });
-    }
-    for (let i = 0; i < level * 3; i++) {
-        camels.push({ x: Math.random() * (canvas.width - 50), y: Math.random() * (canvas.height - 50) });
+        let plantX = Math.random() * (canvas.width - 30);
+        let plantY = Math.random() * (canvas.height - 30);
+        let camelX = Math.random() * (canvas.width - 50);
+        let camelY = Math.random() * (canvas.height - 50);
+        
+        plants.push({ x: plantX, y: plantY });
+        camels.push({ x: camelX, y: camelY });
     }
 
     updateHeader();
