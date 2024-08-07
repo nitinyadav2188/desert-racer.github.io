@@ -15,6 +15,22 @@ const crashSound = new Audio('music/crash.mp3');
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.3;
 
+// Ensure audio files are loaded before starting the game
+function preloadAudio() {
+    return new Promise((resolve, reject) => {
+        backgroundMusic.oncanplaythrough = () => {
+            coinSound.oncanplaythrough = () => {
+                crashSound.oncanplaythrough = () => {
+                    resolve();
+                };
+                crashSound.onerror = reject;
+            };
+            coinSound.onerror = reject;
+        };
+        backgroundMusic.onerror = reject;
+    });
+}
+
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
