@@ -60,7 +60,7 @@ coin.mp3
 
 crash.mp3
 
-Audio Integration:
+Audio Integration:---------------->
 
 The game includes background music and sound effects:
 
@@ -70,14 +70,14 @@ Coin Collection Sound: Plays when the car collects a coin.
 
 Crash Sound: Plays when the car hits an obstacle or the wall.
 
-Contributions:
+Contributions:----------->
 
 Contributions are welcome! If you have suggestions for improvements or additional features, please open an issue or submit a pull request.
 
-License:
+License:-------------->
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact:
+Contact:------------>
 
 For any questions or inquiries, please contact Nitin Yadav.
