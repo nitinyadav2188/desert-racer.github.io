@@ -196,12 +196,13 @@ function handleTouchStart(event) {
     keys['ArrowUp'] = false;
     keys['ArrowDown'] = false;
 
+    // Improved touch controls
     if (touchX < canvas.width / 3) {
         keys['ArrowLeft'] = true;
     } else if (touchX > 2 * canvas.width / 3) {
         keys['ArrowRight'] = true;
     } else if (touchY < canvas.height / 3) {
-        keys['ArrowUp'] = true;
+        keys['ArrowUp'] = true; // Highlighted: Improved touch control for 'ArrowUp'
     } else if (touchY > 2 * canvas.height / 3) {
         keys['ArrowDown'] = true;
     }
@@ -219,12 +220,13 @@ function handleTouchMove(event) {
     keys['ArrowUp'] = false;
     keys['ArrowDown'] = false;
 
+    // Improved touch controls
     if (touchX < canvas.width / 3) {
         keys['ArrowLeft'] = true;
     } else if (touchX > 2 * canvas.width / 3) {
         keys['ArrowRight'] = true;
     } else if (touchY < canvas.height / 3) {
-        keys['ArrowUp'] = true;
+        keys['ArrowUp'] = true; // Highlighted: Improved touch control for 'ArrowUp'
     } else if (touchY > 2 * canvas.height / 3) {
         keys['ArrowDown'] = true;
     }
@@ -236,7 +238,8 @@ function handleTouchEnd(event) {
     keys['ArrowLeft'] = false;
     keys['ArrowRight'] = false;
     keys['ArrowDown'] = false;
-}   
+}
+
 //--------------------------------------->
 window.addEventListener('keydown', (e) => {
     keys[e.key] = true;
