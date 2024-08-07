@@ -117,7 +117,8 @@ function update() {
 
     if (coins.length === 0) {
         level++;
-        coinsNeeded *= 2;
+        coinsCollected = 0;//Reset the coins collected for next level
+        coinsNeeded *= 2;//double the coins needed for the next level
         if (level > 10) {
             message = 'Congratulations! You completed all levels!';
             gameOver = true;
