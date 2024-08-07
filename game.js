@@ -130,6 +130,12 @@ function update() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Draw walls
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.5)'; // Semi-transparent red for visibility
+        ctx.fillRect(0, 0, canvas.width, 20); // Top wall
+        ctx.fillRect(0, 0, 20, canvas.height); // Left wall
+        ctx.fillRect(canvas.width - 20, 0, 20, canvas.height); // Right wall
+        ctx.fillRect(0, canvas.height - 20, canvas.width, 20); // Bottom wall
 
     ctx.drawImage(carImage, car.x, car.y, car.width, car.height);
 
