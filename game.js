@@ -24,16 +24,16 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas(); // Initial call to set the size
 
 const carImage = new Image();
-carImage.src = 'car.png'; // Update with the actual path to the car image
+carImage.src = 'car.png'; // Update karo with actual path to the car image
 
 const coinImage = new Image();
-coinImage.src = 'coin.jpg'; // Update with the actual path to the coin image
+coinImage.src = 'coin.jpg'; // Update it with the actual path to the coin image
 
 const plantImage = new Image();
-plantImage.src = 'tree.png'; // Update with the actual path to the plant image
+plantImage.src = 'tree.png'; // Update it with the actual path to the plant image
 
 const camelImage = new Image();
-camelImage.src = 'cat.png'; // Update with the actual path to the camel image
+camelImage.src = 'cat.png'; // Update it with the actual path to the camel image
 
 let car = { x: 50, y: canvas.height / 2, width: 80, height: 50, speed: 5 };
 let coins = [];
@@ -109,7 +109,7 @@ function update() {
                car.y + car.height > camel.y;
     })) {
         crashSound.play(); // Play crash sound
-        message = "I'm sorry, Babu!!"; // Sarcastic message on failure
+        message = "I'm sorry, Babu!!"; // message on failure
         gameOver = true;
         return;
     }
