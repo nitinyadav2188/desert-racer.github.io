@@ -92,6 +92,7 @@ function update() {
             car.y + car.height > coin.y) {
             coinsCollected++;
             coinSound.play(); // Play coin sound
+            updateHeader(); // Update header immediately after collecting a coin
             return false;
         }
         return true;
