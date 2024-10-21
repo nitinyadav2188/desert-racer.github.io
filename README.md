@@ -1,5 +1,7 @@
 Desert Racer: Code Edition(2024)
 
+designed by Nitin Yadav
+
 Welcome to Desert Racer: Code Edition! This is a fun and educational car racing game designed to teach basic programming skills using JavaScript. Navigate through the desert, collect coins, avoid obstacles, and advance through increasingly difficult levels.
 
 Features------------------>
