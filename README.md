@@ -56,13 +56,12 @@ Project structure (typical)
 - index.html — main game page
 - styles.css — styling and responsive layout
 - game.js — game logic (controls, collisions, audio)
-- assets/ — images / screenshots / audio (optional)
+- assets/ - images/screenshots
 
 ## Usage
 
 Controls
 - Desktop: Arrow keys (Left / Right / Up / Down)
-- Mobile: On-screen buttons (tap to move)
 - Objective: Collect the required number of coins to progress. Avoid obstacles to prevent crashes.
 
 Example playthrough
@@ -72,10 +71,14 @@ Example playthrough
 4. After collecting the required coins, the next level begins (difficulty increases).
 
 Screenshots
-If you have screenshots, add them to `assets/screenshots/` and reference them here:
-![Gameplay screenshot](assets/screenshots/screenshot1.png)
+![Gameplay screenshot](assets/screenshots/desrace_terms.jpeg)
 
-(If no screenshots are available, consider adding one by taking a browser screenshot and placing it in the folder above.)
+![Gameplay screenshot](assets/screenshots/desrace_main_lvl1.jpeg)
+
+![Gameplay screenshot](assets/screenshots/desrace_crash.jpeg)
+
+![Gameplay screenshot](assets/screenshots/desrace_main_lvl2.jpeg)
+
 
 ## Development & Testing
 
@@ -83,10 +86,6 @@ If you have screenshots, add them to `assets/screenshots/` and reference them he
 - Recommended quick test: run the simple Python server above and open the game in the browser.
 - Use the browser DevTools to inspect console logs, debug game loop and collision logic.
 
-Optional enhancements you can add
-- Unit tests for isolated logic (e.g., collision detection functions)
-- Better asset management and preloaders
-- Mobile UI/UX improvements and touch gestures
 
 ## Contribution Guidelines
 
